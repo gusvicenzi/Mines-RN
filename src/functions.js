@@ -19,15 +19,15 @@ const createBoard = (rows, columns) => {
 };
 
 const spreadMines = (board, minesAmount) => {
-  const rows = board.lenght;
-  const columns = board[0].lenght;
+  const rows = board.length;
+  const columns = board[0].length;
   let minesPlanted = 0;
   while (minesPlanted < minesAmount) {
-    const rowSelected = parseInt(Math.random() * rows, 10);
-    const colSelected = parseInt(Math.random() * columns, 10);
+    const rowSel = parseInt(Math.random() * rows, 10);
+    const columnSel = parseInt(Math.random() * columns, 10);
 
-    if (!board[rowSelected][colSelected].mined) {
-      board[rowSelected][colSelected].mined = true;
+    if (!board[rowSel][columnSel].mined) {
+      board[rowSel][columnSel].mined = true;
       minesPlanted++;
     }
   }
