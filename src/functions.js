@@ -55,7 +55,7 @@ const getNeighbors = (board, row, column) => {
   const columns = [column - 1, column, column + 1];
   rows.forEach(r => {
     columns.forEach(c => {
-      const different = r != row || c != column;
+      const different = r !== row || c !== column;
       const validRow = r >= 0 && r < board.length;
       const validColumn = c >= 0 && c < board[0].length;
       if (different && validRow && validColumn) {
@@ -89,7 +89,7 @@ const openField = (board, row, column) => {
       const neighbors = getNeighbors(board, row, column);
       field.nearMines = neighbors.filter(
         n => n.mined,
-      ).length; /* filter all neighbors that are 
+      ).length; /* filter all neighbors that are
       mined and saves the number of mined neighbors in field.nearMines */
     }
   }
