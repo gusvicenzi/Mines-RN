@@ -7,6 +7,9 @@ export default props => {
     <View style={styles.container}>
       <View style={styles.flagContainer}>
         <TouchableOpacity onPress={props.onFlagPress} style={styles.flagButton}>
+          <Text style={[styles.level, {color: `${props.levelSelected[1]}`}]}>
+            {props.levelSelected[0]}
+          </Text>
           <Flag bigger />
         </TouchableOpacity>
         <Text style={styles.flagsLeft}>= {props.flagsLeft}</Text>
@@ -21,6 +24,7 @@ export default props => {
 const styles = StyleSheet.create({
   container: {
     flexGrow: 1,
+    width: '100%',
     flexDirection: 'row',
     backgroundColor: '#EEE',
     alignItems: 'center',
@@ -28,12 +32,17 @@ const styles = StyleSheet.create({
     paddingTop: 20,
     paddingHorizontal: 20,
   },
+  level: {
+    fontWeight: 'bold',
+    fontSize: 20,
+  },
   flagContainer: {
     flexDirection: 'row',
   },
   flagButton: {
+    flexDirection: 'row',
     marginTop: 10,
-    minWidth: 30,
+    marginRight: 10,
   },
   flagsLeft: {
     fontSize: 30,

@@ -69,6 +69,19 @@ export default class App extends Component {
     this.setState(this.createState());
   };
 
+  levelSelectedText = () => {
+    let level = params.difficultLevel;
+    if (level === 0.1) {
+      return ['Fácil', '#49B65D'];
+    } else if (level === 0.15) {
+      return ['Médio', '#2765F7'];
+    } else if (level === 0.2) {
+      return ['Difícil', '#f1c232'];
+    } else {
+      return ['Extremo', '#f44336'];
+    }
+  };
+
   render() {
     return (
       <SafeAreaView style={styles.container}>
@@ -81,6 +94,7 @@ export default class App extends Component {
           flagsLeft={this.minesAmount() - flagsUsed(this.state.board)}
           onNewGame={() => this.setState(this.createState())}
           onFlagPress={() => this.setState({showLevelSelection: true})}
+          levelSelected={this.levelSelectedText()}
         />
         {/* <Text style={styles.text}>Iniciando o Mines!</Text>
         <Text style={styles.instructions}>

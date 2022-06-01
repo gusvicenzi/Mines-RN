@@ -20,38 +20,22 @@ export default props => {
           />
           <Level
             levelColor="#2765F7"
+            levelText="Médio"
             onLevelSelected={props.onLevelSelected}
             difficultLevel={0.15}
-            levelText="Médio"
           />
           <Level
             levelColor="#f1c232"
+            levelText="Difícil"
             onLevelSelected={props.onLevelSelected}
             difficultLevel={0.2}
-            levelText="Difícil"
           />
-          {/* <Level levelColor="#F26337" levelText="Extremo" /> */}
           <Level
             levelColor="#f44336"
+            levelText="Extremo"
             onLevelSelected={props.onLevelSelected}
             difficultLevel={0.3}
-            levelText="Extremo"
           />
-          {/* <TouchableOpacity
-            style={[styles.button, styles.bgEasy]}
-            onPress={() => props.onLevelSelected(0.1)}>
-            <Text style={styles.buttonLabel}>Fácil</Text>
-          </TouchableOpacity>
-          <TouchableOpacity
-            style={[styles.button, styles.bgMedium]}
-            onPress={() => props.onLevelSelected(0.2)}>
-            <Text style={styles.buttonLabel}>Médio</Text>
-          </TouchableOpacity>
-          <TouchableOpacity
-            style={[styles.button, styles.bgHard]}
-            onPress={() => props.onLevelSelected(0.3)}>
-            <Text style={styles.buttonLabel}>Difícil</Text>
-          </TouchableOpacity> */}
         </View>
       </View>
     </Modal>
@@ -74,23 +58,5 @@ const styles = StyleSheet.create({
   title: {
     fontSize: 30,
     fontWeight: 'bold',
-  },
-  button: {
-    marginTop: 10,
-    padding: 5,
-  },
-  buttonLabel: {
-    fontSize: 20,
-    color: '#EEE',
-    fontWeight: 'bold',
-  },
-  bgEasy: {
-    backgroundColor: '#49B65D',
-  },
-  bgMedium: {
-    backgroundColor: '#2765F7',
-  },
-  bgHard: {
-    backgroundColor: '#F26337',
   },
 });
